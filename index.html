@@ -9,52 +9,46 @@
     <title>South Park</title>
 </head>
 <body>
-    <table id="students">
-        <tr>
-            <th>
-                <span>Name</span>
-            </th>
-            <th>
-                <span>Nickname</span>
-            </th>
-            <th>
-                <span>Occupation</span>
-            </th>
-            <th>
-                <span>Age</span>
-            </th>
-            <th>
-                <span>Voice Actor</span>
-            </th>
-            <th>
-                <span>Gender</span>
-            </th>
-            <th>
-                <span>Religion</span>
-            </th>
-            <th>
-                <span>Cathch Phrase</span>
-            </th>
-            <th>
-                <span>Hair Colour</span>
-            </th>
-            <th>
-                <span>School Grade</span>
-            </th>
-            <th>
-                <span>Episodes</span>
-            </th>
-            <th>
-                <span>Appearances</span>
-            </th>
-            <th>
-                <span>First Appearence</span>
-            </th>
-            <th>
-                <span>Image</span>
-            </th>
-        </tr>
-    </table>
+    <header>
+        <h1>South Park Characters</h1>
+    </header>
+    <main>
+        <section id="characters" class="grid-container">
+
+        </section>
+    </main>
+    <dialog id="dialog-character">
+        <section class="dialog-grid">
+            <figure><img id="dialog-image" src="" alt=""></figure>
+            <article>
+                <h2 id="dialog-name"></h2>
+                <section>
+                    <h4>Personal Info</h4>
+                    <ul>
+                        <li>Gender: <span id="dialog-gender"></span></li>
+                        <li>Occupation: <span id="dialog-occupation"></span></li>
+                        <li>Age: <span id="dialog-age"></span></li>
+                        <li>Religion: <span id="dialog-religion"></span></li>
+                        <li>Nickname: <span id="dialog-nickname"></span></li>
+                        <li>Catch Phrase: <span id="dialog-catch-phrase"></span></li>
+                        <li>Hair Colour: <span id="dialog-hair-color"></span></li>
+                        <li>School Grade <span id="dialog-school-grade"></span></li>
+                        <li>Episodes: <span id="dialog-episodes"></span></li>
+                        <li>Appearances: <span id="dialog-appearances"></span></li>
+                        <li>First Appearance: <span id="dialog-first-appearance"></span></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Voice</h4>
+                    <p><span id="dialog-name2">Character</span> is voiced by <span id="dialog-voiced-by"></span>.</p>
+                </section>
+
+            </article>
+        </section>
+        <form method="dialog">
+            <button id="btn-cancel">Close</button>
+        </form>
+    </dialog>
     <script src="app.js"></script>
 </body>
 </html>
