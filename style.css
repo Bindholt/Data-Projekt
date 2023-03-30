@@ -6,6 +6,10 @@ li {
     text-align: left;
 }
 
+img {
+    width: 150px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;

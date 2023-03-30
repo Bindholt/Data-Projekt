@@ -1,41 +1,21 @@
 "use strict";
 
-window.addEventListener("load", readyPotter);
+window.addEventListener("load", ready);
 
-function ready() {
-    //fetchData()
-    //displayList(array) -> loop thru data, displayObject for each -> add eventlistener (click) på objekter -> showDialog()
-    //displayObject(object)
-    //showDialog(id)
-    //closeDialog()
-    const cartman = {
-        name: "Eric Cartman",
-        nickname: "The Coon",
-        image: "https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png",
-        occupation: "Student",
-        age: 10,
-        voicedBy: "Trey Parker",
-        gender: "Male",
-        religion: "Roman Catholic", 
-        catchPhrase: "Screw you guys, I'm going home!",
-        hairColor: "Brown",
-        schoolGrade: 4,
-        episodes: null,
-        appearances: undefined,
-        firstAppearance: "S01E01",
-    };
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
-    addCharacter(cartman);
+async function ready() {
+    const cast = await getCharacters("https://cederdorff.github.io/dat-js/05-data/southpark.json");
+    getCharacter(cast);
+}
+
+function getCharacter(cast) {
+    cast.forEach(addCharacter)
+}
+
+
+async function getCharacters(url) { 
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
 }
 
 function addCharacter(character) {
@@ -77,28 +57,19 @@ function showClickedCharacter(character) {
     document.querySelector("#dialog-character").showModal();
 }
 
-
-
-
-
-
-
 /*------------------ POTTER -------------------------------*/
 
-async function readyPotter() {
-    const harry = await getCharacter("cartman.json");
+function nestedLoop() {
+  let bobsFollowers = ['Kate', 'Mark', 'Brian', 'Adam'];
 
-    console.log(harry);
-    addCharacter(harry);
+    let tinasFollowers = ['Kate', 'Mark', 'Emma'];
 
-}
-
-async function getCharacter(url) { 
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-}
-
-{
-    
+    let mutualFollowers = [];
+    for (let i = 0; i < bobsFollowers.length; i++) {
+        for (let j = 0; j < tinasFollowers.length; j++) {
+            if (bobsFollowers[i] === tinasFollowers[j]) {
+                mutualFollowers.push(bobsFollowers[i]);
+            }
+        }       
+    }
 }
