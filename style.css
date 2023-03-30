@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-image: url("images/background_sp.png");
 }
 
 li {
@@ -7,7 +8,13 @@ li {
 }
 
 img {
-    width: 150px;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;    
+}
+
+dialog {
+      background-color: rgb(205, 194, 181);
 }
 
 .grid-container {
@@ -18,8 +25,12 @@ img {
 }
 
 .grid-container article {
+    border-radius: 1em;
     box-shadow: 1px 1px 100px rgba(57, 29, 2, 0.25);
-    cursor:pointer;
+    padding: 1em;
+      background-color: rgb(205, 194, 181);
+    cursor: pointer;
+    height: auto;
 }
 
 @media (min-width: 600px) {

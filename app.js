@@ -3,28 +3,35 @@
 window.addEventListener("load", ready);
 
 async function ready() {
-    const cast = await getCharacters("https://cederdorff.github.io/dat-js/05-data/southpark.json");
-    getCharacter(cast);
+    const characters = await fetchListOfCharacters("https://cederdorff.github.io/dat-js/05-data/southpark.json");
+    showAllCharacters(characters);
+    document.querySelectorAll("img").forEach((img) => {
+        img.onerror = function() {
+            this.src = "images/placeholder.png";
+    }
+});
 }
 
-async function getCharacters(url) { 
+async function fetchListOfCharacters(url) { 
     const response = await fetch(url);
     const data = await response.json();
     return data;
 }
 
-function getCharacter(cast) {
-    cast.forEach(addCharacter)
+function showAllCharacters(characters) {
+    characters.forEach(showCharacter)
 }
 
-function addCharacter(character) {
+function showCharacter(character) {
     document.querySelector("#characters").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
             <article>
-                <img src="${character.image}">
-                <h2>${character.name}</h2>
-                <p>${character.occupation}</p>
+                <div>
+                    <img src="${character.image}">
+                    <h2>${character.name}</h2>
+                    <p>${character.occupation}</p>
+                </div>
             </article>
         `
     );
