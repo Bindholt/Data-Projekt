@@ -7,15 +7,14 @@ async function ready() {
     getCharacter(cast);
 }
 
-function getCharacter(cast) {
-    cast.forEach(addCharacter)
-}
-
-
 async function getCharacters(url) { 
     const response = await fetch(url);
     const data = await response.json();
     return data;
+}
+
+function getCharacter(cast) {
+    cast.forEach(addCharacter)
 }
 
 function addCharacter(character) {
@@ -55,21 +54,4 @@ function showClickedCharacter(character) {
     document.querySelector("#dialog-voiced-by").textContent = character.voicedBy;
 
     document.querySelector("#dialog-character").showModal();
-}
-
-/*------------------ POTTER -------------------------------*/
-
-function nestedLoop() {
-  let bobsFollowers = ['Kate', 'Mark', 'Brian', 'Adam'];
-
-    let tinasFollowers = ['Kate', 'Mark', 'Emma'];
-
-    let mutualFollowers = [];
-    for (let i = 0; i < bobsFollowers.length; i++) {
-        for (let j = 0; j < tinasFollowers.length; j++) {
-            if (bobsFollowers[i] === tinasFollowers[j]) {
-                mutualFollowers.push(bobsFollowers[i]);
-            }
-        }       
-    }
 }
