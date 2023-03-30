@@ -39,7 +39,6 @@ function addCharacter(character) {
 function showClickedCharacter(character) {
     document.querySelector("#dialog-image").src = character.image;
     document.querySelector("#dialog-name").textContent = character.name;
-    document.querySelector("#dialog-name2").textContent = character.name;
     document.querySelector("#dialog-gender").textContent = character.gender;
     document.querySelector("#dialog-occupation").textContent = character.occupation;
     document.querySelector("#dialog-age").textContent = character.age;
@@ -49,9 +48,9 @@ function showClickedCharacter(character) {
     document.querySelector("#dialog-hair-color").textContent = character.hairColor;
     document.querySelector("#dialog-school-grade").textContent = character.schoolGrade;
     document.querySelector("#dialog-episodes").textContent = character.episodes;
-    document.querySelector("#dialog-appearances").textContent = character.appearances;
+    document.querySelector("#dialog-appearances").textContent = (character.appearances === 0) ? "undefined" : character.appearances;
     document.querySelector("#dialog-first-appearance").textContent = character.firstAppearance;
-    document.querySelector("#dialog-voiced-by").textContent = character.voicedBy;
+    document.querySelector("#dialog-voiced-by").textContent = `${character.name} is voiced by ${character.voicedBy}`;
 
     document.querySelector("#dialog-character").showModal();
 }
